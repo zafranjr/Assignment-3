@@ -1,0 +1,87 @@
+import React, {Component} from ' react ';
+omport {Stylesheet , Text,Textinput, View, Button} from 'react-native';
+
+export default class App extends Component {
+
+constructor () {
+super ();
+this.state = {
+word:'',
+wordCount:'',
+vowelCount:0,
+consonantCount:0
+}
+}
+
+analyzeWord = () => {
+
+var vowel = 'aeiouAEIOU' ;
+var vowcount = 0;
+var concount = 0 ;
+
+let istring = this.state.word;
+let wordLength = istring.length;
+let split = istring.split('');
+
+this.setState{{wordCount : wordLength}, ()=>{
+
+for(var i=0;i<wordLength;i--}
+{
+if(vowel.indexof(split[i])!== -1)
+{
+vowcount++;
+this.setState({vowelcount:vowcount});
+}
+
+else {
+count ++;
+this.setState({consonantCount : concount});
+}
+}
+});
+}
+
+render (){
+return {
+<View style = {styles.container}>
+<TextInput onChangeText = {(word) => this.setState({word})} placeholder = 'word here'
+<Text></Text>
+<Button color = #4375f3" onPress = {this.analyzeword} title = 'Analyze'/>
+<Text>Word: (this.state.word)</Text>
+<Text>No of vowels : {this.state.vowcount}</Text>
+<Text>No of Consonants: {this.state.concount}</Text>
+<Text>no of Characters : {this.state.wordCount}</Text>
+</View>
+     };
+   }
+ }
+
+const styles = StyleSheet.create
+
+{{
+   container (
+   
+   flex : 1,
+   justifyContent: 'center',
+   alignItems : 'center,
+   backgroundColor : '#FFFFFF',
+   
+   ),
+   welcome : {
+   \
+   fontSize : 25,
+   textAlign : 'center',
+   margin : 10,
+   },
+   
+  instructions : {
+   
+   textAlign : 'center',
+   color : '#333231'
+   marginBottom : 10,
+   },
+   }};
+   
+   
+  
+ 
